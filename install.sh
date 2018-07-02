@@ -1,5 +1,28 @@
 #run as ROOT
 
+#Preparing the System - CentOS7
+sudo yum -y update
+sudo yum -y install yum-utils
+sudo yum -y groupinstall development
+
+#Installing and Setting Up Python 3
+sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+sudo yum -y install python36u
+sudo yum -y install python36u-pip
+
+#Install Packages from the CentOS and EPEL Repos
+sudo yum install epel-release
+sudo yum install python-pip httpd python36u-mod_wsgi
+
+#Set up Apache
+#Install steps required, bellow is activation steps
+sudo systemctl enable httpd.service
+sudo systemctl start httpd.service
+
+#Install letsencrypt
+sudo yum-config-manager --enable rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional
+sudo yum install certbot-apache
+
 #Create additional directories required
 mkdir /etc/httpd/sites-avaliable
 mkdir /etc/httpd/sites-enabled
