@@ -1,0 +1,54 @@
+#Configuraion steps to set up Pyche on a fresh install of CentOS 7
+
+#Preparing the System
+sudo yum -y update
+sudo yum -y install yum-utils
+sudo yum -y groupinstall development
+
+
+sudo yum install net-tools #Install network tools
+sudo yum install nano #Install nano
+sudo yum install wget #Install wget
+
+
+#Installing and Setting Up Python 3
+#https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-centos-7
+sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+sudo yum -y install python36u
+sudo yum -y install python36u-pip
+
+#Install Packages from the CentOS and EPEL Repos
+#https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-apache-and-mod_wsgi-on-centos-7
+sudo yum install epel-release
+sudo yum install python-pip httpd python36u-mod_wsgi
+
+
+#Set up Apache
+#https://www.1and1.com/cloud-community/learn/application/python/use-mod-wsgi-to-run-python-as-a-web-application-on-centos-7/
+sudo systemctl enable httpd.service
+sudo systemctl start httpd.service
+httpd -M | grep wsgi #Test if mod_wsgi is installed
+sudo mkdir /var/www/python
+sudo chown apache:apache /var/www/python
+sudo systemctl restart httpd
+
+#set up required python modules
+sudo pip3.6 install flask
+
+#letsencrypt
+#https://certbot.eff.org/lets-encrypt/centosrhel7-apache
+sudo yum -y install yum-utils
+sudo yum-config-manager --enable rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional
+sudo yum install certbot-apache
+#https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-centos-7
+
+
+
+
+
+
+
+
+
+
+
