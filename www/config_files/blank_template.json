@@ -1,0 +1,26 @@
+{
+	"ServerConfig": {
+		"ServerName": "0.0.0.0",
+		"ServerAlias": "",
+		"Protocol":"http"
+	},
+	"ErrorConfig": {
+		"LogLevel": "warn",
+		"ErrorLog": "AppName_error.log",
+		"AccessLog": "AppName_access.log"
+	},
+	"ServerAdmin": {
+		"Name": "Joulco Square",
+		"Website": "joulco2.com",
+		"Email": "admin@joulco2.com"
+	},
+	"WSGIConfig": {
+		"Name": "Application Name",
+		"ShortName": "AppName",
+		"Description": "Application Description",
+		"AppDir": "/var/www/pyche/www/my_apps",
+		"Default_App": "blank_template",
+		"Fallback_App": "app_maintenance",
+		"Developer": true
+	}
+}
