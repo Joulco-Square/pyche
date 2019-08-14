@@ -1,0 +1,16 @@
+{
+  "DatabaseConfig": [
+    {
+      "Name": "PostgreSQL",
+      "Host": "0.0.0.0",
+      "Database": "##",
+      "User": "postgres",
+      "Password": "######"
+    }
+  ],
+  "FlaskConfig": {
+    "Testing": true,
+    "Debug": true,
+    "SecretKey": "MINHECHEVESACRETE"
+  }
+}

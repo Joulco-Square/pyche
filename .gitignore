@@ -1,16 +1,3 @@
 # exclude files/folders
 *.pyc
 *.*~
-__pycache__
-www/config_files/*
-www/mod_wsgi_files/*
-www/my_apps/*
-www/standard_apps/*
-
-# exception to the rules
-!www/config_files/.gitkeep
-!www/config_files/blank_template.json
-!www/mod_wsgi_files/.gitkeep
-!www/mod_wsgi_files/blank_template.wsgi
-!www/my_apps/.gitkeep
-!www/standard_apps/.gitkeep
