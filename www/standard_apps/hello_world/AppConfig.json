@@ -1,0 +1,19 @@
+{
+  "FlaskConfig": {
+    "Name": "Hello World",
+    "ShortName": "Pyche_Hello",
+    "Description": "Pyche Hello World Test App"
+  },
+  "Custom": {
+  		"alert_server_url" : "https://api.alert.jc2.app/trigger/"
+  }
+}
+
+
+
+
+
+
+
+
+
